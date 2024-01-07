@@ -1,0 +1,30 @@
+.footer {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    transition: all 800ms ease;
+  }
+}
+
+.footer__link {
+  height: 100%;
+  width: 40px;
+  border-radius: 50%;
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secandory);
+  a {
+    background-color: var(--color-secandory);
+  }
+}
