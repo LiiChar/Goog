@@ -1,10 +1,6 @@
 # goog
 
-An Electron application with React and TypeScript
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+Оконное приложения для запуска созданных команд через оболочку терминала. Создан с помощью javascript библиотеки Electronjs на сборщике Vite с использование библиотеки React и Typescript.
 
 ## Project Setup
 
