@@ -1,0 +1,127 @@
+.header {
+  position: sticky;
+  top: 6px;
+  padding: 6px 6px 0px;
+  @extend %flex-between-center;
+  left: 0;
+  z-index: 100;
+  height: 35px;
+  width: 100%;
+  -webkit-app-region: drag;
+  display: flex;
+  font-size: $size-xxs;
+  gap: $space-5;
+
+  ul {
+    display: flex;
+
+    li {
+      -webkit-app-region: none;
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.header_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookmark {
+  width: 100%;
+  height: 20px;
+  display: flex;
+}
+
+.bookmark__title {
+}
+
+.bookmark__panel {
+}
+
+.bar {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.bar__tabs {
+  width: 85%;
+  height: 30px;
+  display: flex;
+}
+
+.bar__tabs__tab {
+  max-width: 50px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-app-region: none;
+}
+
+.bar__tabs__tab__span {
+}
+
+// .tabs__tab__icon {
+// }
+
+input {
+  -webkit-app-region: none;
+}
+
+button {
+  -webkit-app-region: none;
+}
+
+.header__add {
+  -webkit-app-region: none;
+  height: 25px;
+  width: 25px;
+  aspect-ratio: 1 / 1;
+  transition: none;
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  &:focus-visible {
+    @include focus-ring(var(--primary));
+  }
+}
+
+.header__action {
+  -webkit-app-region: none;
+  height: 25px;
+  width: 25px;
+  aspect-ratio: 1 / 1;
+  transition: none;
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  &:focus-visible {
+    @include focus-ring(var(--primary));
+  }
+}
+
+.header__action:hover {
+  fill: white;
+  background-color: var(--primary1);
+}
+
+.search__guard {
+  width: 10%;
+  display: flex;
+  -webkit-app-region: none;
+}

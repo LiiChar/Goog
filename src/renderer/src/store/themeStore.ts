@@ -1,14 +1,14 @@
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-const themes = ['light-mode', 'dark-mode'] as const
+const themes = ['light-mode', 'dark-mode'] as const;
 
 interface ThemeStore {
-  theme: (typeof themes)[number]
-  isLight: boolean
-  isVisible: boolean
-  toggleVisible: () => void
-  toggleTheme: () => void
+  theme: (typeof themes)[number];
+  isLight: boolean;
+  isVisible: boolean;
+  toggleVisible: () => void;
+  toggleTheme: () => void;
 }
 
 export const useThemeStore = create<ThemeStore>()(
@@ -18,20 +18,21 @@ export const useThemeStore = create<ThemeStore>()(
       isLight: false,
       isVisible: false,
       toggleVisible: () => set((state) => ({ isVisible: !state.isVisible })),
-      async toggleTheme() {
-        // @ts-ignore: error message
-        await window.darkMode.toggle()
-        if (this.isLight) {
-          set(() => ({ theme: 'dark-mode', isLight: false }))
-          localStorage.setItem('theme', 'dark-mode')
-        } else {
-          set(() => ({ theme: 'light-mode', isLight: true }))
-          localStorage.setItem('theme', 'light-mode')
-        }
-      }
+      toggleTheme() {
+        // @ts-ignore
+        window.darkMode.toggle().then(() => {
+          set(() => {
+            if (this.isLight) {
+              return { theme: 'dark-mode', isLight: false };
+            } else {
+              return { theme: 'light-mode', isLight: true };
+            }
+          });
+        });
+      },
     }),
     {
-      name: 'theme-storage'
-    }
-  )
-)
+      name: 'theme-storage',
+    },
+  ),
+);

@@ -1,0 +1,15 @@
+.command_modal__main__element_list {
+  width: 100%;
+  height: calc(100% - 44px);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 5px;
+  z-index: 50;
+}
+
+.command_modal__main__element_list__element {
+  display: flex;
+  gap: var(6px);
+  flex-direction: column;
+}

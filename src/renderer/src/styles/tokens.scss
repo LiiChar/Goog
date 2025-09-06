@@ -1,0 +1,59 @@
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%scroll-hidden {
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+%circle {
+  border-radius: 50%;
+}
+
+// Spacing scale
+$space-0: 0;
+$space-1: 2px;
+$space-2: 4px;
+$space-3: 6px;
+$space-4: 8px;
+$space-5: 12px;
+$space-6: 16px;
+$space-8: 20px;
+$space-10: 24px;
+
+// Size tokens
+$size-xxs: 12px;
+$size-xs: 14px;
+$size-sm: 16px;
+$size-md: 20px;
+$size-lg: 24px;
+$size-xl: 32px;
+
+// Mixins
+@mixin focus-ring($color) {
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, $color 60%, transparent);
+}
+
+@mixin hover-elevate {
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+}

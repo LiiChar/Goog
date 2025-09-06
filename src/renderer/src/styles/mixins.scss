@@ -1,0 +1,22 @@
+@use 'sass:color';
+
+@mixin br-opacity($color, $opacity) {
+  // Если это SCSS-цвет
+  @if type-of($color) == 'color' {
+    border-color: rgba($color, $opacity);
+
+    // Если это строка, начинающаяся с '#' — HEX
+  } @else if type-of($color) == 'string' and str-index($color, '#') == 1 {
+    $hex-color: unquote($color); // убираем кавычки
+    $r: red($hex-color);
+    $g: green($hex-color);
+    $b: blue($hex-color);
+    border-color: rgba($r, $g, $b, $opacity);
+
+    // Иначе — CSS-переменная (var(--primary))
+  } @else {
+    // Для работы в браузере нужно использовать CSS-переменную в формате RGB:
+    // border-color: rgba(var(--primary), 0.5);
+    border-color: rgba(#{$color}, $opacity);
+  }
+}

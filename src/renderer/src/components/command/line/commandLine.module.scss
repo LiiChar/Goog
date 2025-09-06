@@ -1,0 +1,49 @@
+.command_timeline {
+  overflow-y: visible;
+  margin: 6px 0 0 0;
+  padding-left: 0px;
+  list-style: none;
+  position: relative;
+
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: -3px;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary);
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    position: relative;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .cmd_text {
+    font-size: $size-xxs;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & > div {
+    z-index: 5;
+    position: relative;
+  }
+}
